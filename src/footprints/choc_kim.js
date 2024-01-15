@@ -1,4 +1,3 @@
-// Source: https://github.com/infused-kim/kb_ergogen_fp/blob/main/choc.js
 // Author: Ergogen + @infused-kim improvements
 //
 // Kailh Choc PG1350
@@ -35,6 +34,8 @@
 //    same time
 //  - Made hotswap pads not overlap holes to fix DRC errors
 //  - Fixed DRC errors "Drilled holes co-located"
+//
+// Source: https://github.com/infused-kim/kb_ergogen_fp/blob/main/choc.js
 
 module.exports = {
     params: {

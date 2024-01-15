@@ -7,7 +7,6 @@
 //  - G-Switch MK-12C02-G015
 //  - Alps SSSS811101
 //  - PCM12SMTR
-// (fp_line (start -1.725 4.4) (end -2.755 4.4) (layer F.CrtYd) (width 0.05))
 
 module.exports = {
   params: {
@@ -35,19 +34,15 @@ module.exports = {
         (fp_line (start -1.425 1.6) (end -1.425 -0.1) (layer F.SilkS) (width 0.12))
         (fp_line (start 1.425 2.85) (end 1.425 -2.85) (layer F.SilkS) (width 0.12))
 
-        (fp_line (start -1.725 2.85) (end -2.755 2.85) (layer F.CrtYd) (width 0.05))
-        (fp_line (start -1.725 4.4) (end -1.725 2.85) (layer F.CrtYd) (width 0.05))
-        (fp_line (start 1.795 4.4) (end -1.725 4.4) (layer F.CrtYd) (width 0.05))
+        (fp_line (start 1.795 4.4) (end -2.755 4.4) (layer F.CrtYd) (width 0.05))
         (fp_line (start 1.795 1.65) (end 1.795 4.4) (layer F.CrtYd) (width 0.05))
         (fp_line (start 3.095 1.65) (end 1.795 1.65) (layer F.CrtYd) (width 0.05))
         (fp_line (start 3.095 -1.65) (end 3.095 1.65) (layer F.CrtYd) (width 0.05))
         (fp_line (start 1.795 -1.65) (end 3.095 -1.65) (layer F.CrtYd) (width 0.05))
         (fp_line (start 1.795 -4.4) (end 1.795 -1.65) (layer F.CrtYd) (width 0.05))
-        (fp_line (start -1.725 -4.4) (end 1.795 -4.4) (layer F.CrtYd) (width 0.05))
-        (fp_line (start -1.725 -2.85) (end -1.725 -4.4) (layer F.CrtYd) (width 0.05))
-        (fp_line (start -2.755 -2.85) (end -1.725 -2.85) (layer F.CrtYd) (width 0.05))
-        (fp_line (start -2.755 2.85) (end -2.755 -2.85) (layer F.CrtYd) (width 0.05))
-
+        (fp_line (start -2.755 -4.4) (end 1.795 -4.4) (layer F.CrtYd) (width 0.05))
+        (fp_line (start -2.755 4.4) (end -2.755 -4.4) (layer F.CrtYd) (width 0.05))
+        
         (fp_line (start -1.425 -1.4) (end -1.425 -1.6) (layer F.SilkS) (width 0.12))
         (fp_line (start -1.305 -3.35) (end -1.305 3.35) (layer F.Fab) (width 0.1))
         (fp_line (start 1.295 -3.35) (end -1.305 -3.35) (layer F.Fab) (width 0.1))
@@ -77,35 +72,26 @@ module.exports = {
       (fp_line (start 2.595 -0.1) (end 1.295 -0.1) (layer B.Fab) (width 0.1))
       (fp_line (start -1.305 3.35) (end -1.305 -3.35) (layer B.Fab) (width 0.1))
       (fp_line (start 2.645 -0.15) (end 2.595 -0.1) (layer B.Fab) (width 0.1))
-
       (fp_line (start -1.425 1.4) (end -1.425 1.6) (layer B.SilkS) (width 0.12))
       (fp_line (start 0.415 3.45) (end -0.375 3.45) (layer B.SilkS) (width 0.12))
       (fp_line (start -0.375 -3.45) (end 0.415 -3.45) (layer B.SilkS) (width 0.12))
       (fp_line (start -1.425 -1.6) (end -1.425 0.1) (layer B.SilkS) (width 0.12))
       (fp_line (start 1.425 -2.85) (end 1.425 2.85) (layer B.SilkS) (width 0.12))
-
+      (fp_line (start 1.795 4.4) (end 1.795 1.65) (layer B.CrtYd) (width 0.05))
+      (fp_line (start -2.755 4.4) (end 1.795 4.4) (layer B.CrtYd) (width 0.05))
       (fp_line (start 2.845 -1.2) (end 2.845 -0.35) (layer B.Fab) (width 0.1))
       (fp_line (start 1.345 -1.4) (end 2.645 -1.4) (layer B.Fab) (width 0.1))
-
-      (fp_line (start -1.725 -2.85) (end -2.755 -2.85) (layer B.CrtYd) (width 0.05))
-      (fp_line (start -1.725 -4.4) (end -1.725 -2.85) (layer B.CrtYd) (width 0.05))
-      (fp_line (start 1.795 -4.4) (end -1.725 -4.4) (layer B.CrtYd) (width 0.05))
+      (fp_line (start 1.795 -4.4) (end -2.755 -4.4) (layer B.CrtYd) (width 0.05))
       (fp_line (start 1.795 -1.65) (end 1.795 -4.4) (layer B.CrtYd) (width 0.05))
       (fp_line (start 3.095 -1.65) (end 1.795 -1.65) (layer B.CrtYd) (width 0.05))
-      (fp_line (start 3.095 1.65) (end 3.095 -1.65) (layer B.CrtYd) (width 0.05))
-      (fp_line (start 1.795 1.65) (end 3.095 1.65) (layer B.CrtYd) (width 0.05))
-      (fp_line (start 1.795 4.4) (end 1.795 1.65) (layer B.CrtYd) (width 0.05))
-      (fp_line (start -1.725 4.4) (end 1.795 4.4) (layer B.CrtYd) (width 0.05))
-      (fp_line (start -1.725 2.85) (end -1.725 4.4) (layer B.CrtYd) (width 0.05))
-      (fp_line (start -2.755 2.85) (end -1.725 2.85) (layer B.CrtYd) (width 0.05))
-      (fp_line (start -2.755 -2.85) (end -2.755 2.85) (layer B.CrtYd) (width 0.05))
-
       (fp_line (start 2.845 -0.35) (end 2.645 -0.15) (layer B.Fab) (width 0.1))
       (fp_line (start 2.645 -1.4) (end 2.845 -1.2) (layer B.Fab) (width 0.1))
       (fp_line (start 1.295 -3.35) (end 1.295 3.35) (layer B.Fab) (width 0.1))
       (fp_line (start 1.295 3.35) (end -1.305 3.35) (layer B.Fab) (width 0.1))
       (fp_line (start -1.305 -3.35) (end 1.295 -3.35) (layer B.Fab) (width 0.1))
-
+      (fp_line (start -2.755 -4.4) (end -2.755 4.4) (layer B.CrtYd) (width 0.05))
+      (fp_line (start 3.095 1.65) (end 3.095 -1.65) (layer B.CrtYd) (width 0.05))
+      (fp_line (start 1.795 1.65) (end 3.095 1.65) (layer B.CrtYd) (width 0.05))
       (pad "" smd rect (at -1.085 -3.65 ${270 + p.rot}) (size 1 0.8) (layers B.Cu B.Paste B.Mask))
       (pad "" smd rect (at 1.125 -3.65 ${270 + p.rot}) (size 1 0.8) (layers B.Cu B.Paste B.Mask))
       (pad 4 smd rect (at -1.735 2.25 ${270 + p.rot}) (size 0.7 1.5) (layers B.Cu B.Paste B.Mask))
