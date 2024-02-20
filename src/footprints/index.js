@@ -30,4 +30,7 @@ module.exports = {
     tentingpuck: require('./tentingpuck'),
     trrs: require('./trrs'),
     via: require('./via'),
+    xiao_flatfoot: require('./xiao_flatfoot'),
+    xiao_flippable: require('./xiao_flippable'),
+    xiao_lowell_camp: require('./xiao_lowell_camp'),
 }
