@@ -6,6 +6,7 @@ module.exports = {
     choc: require('./choc'),
     choc_kim: require('./choc_kim'),
     chocmini: require('./chocmini'),
+    diode_ceoloide: require('./diode_ceoloide'),
     diode_kim: require('./diode_kim'),
     diode: require('./diode'),
     jst_bat: require('./jst_bat'),
