@@ -29,6 +29,7 @@ module.exports = {
     switch_power: require('./switch_power'),
     switch_reset: require('./switch_reset'),
     tentingpuck: require('./tentingpuck'),
+    trackpoint_mount: require('./trackpoint_mount'),
     trrs: require('./trrs'),
     via: require('./via'),
     xiao_flatfoot: require('./xiao_flatfoot'),
