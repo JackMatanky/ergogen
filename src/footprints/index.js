@@ -35,4 +35,5 @@ module.exports = {
     xiao_flatfoot: require('./xiao_flatfoot'),
     xiao_flippable: require('./xiao_flippable'),
     xiao_lowell_camp: require('./xiao_lowell_camp'),
+    xiao_virginia2244: require('./xiao_virginia2244'),
 }
