@@ -87,7 +87,8 @@ module.exports = {
       return thru_hole
     }
 
-    /*I made the male pad and female pads that I stole from infused-kim at https://nilnil.notion.site/Convert-Kicad-Footprints-to-Ergogen-8340ce87ad554c69af4e3f92bc9a0898
+    /*
+    I made the male pad and female pads that I stole from infused-kim at https://nilnil.notion.site/Convert-Kicad-Footprints-to-Ergogen-8340ce87ad554c69af4e3f92bc9a0898
     into constants so that I didn't have to copy and paste them a million times in get_solder_pads. Changing these will change the shape of the pads in the reversable footprint.
     
           |`````\                 \```````|
@@ -185,9 +186,11 @@ module.exports = {
       return solder_pads
     }
 
-    /*I stole get_at_coordinates() and adjust_point() from infused-kim's guide at https://nilnil.notion.site/Convert-Kicad-Footprints-to-Ergogen-8340ce87ad554c69af4e3f92bc9a0898
+    /*
+    I stole get_at_coordinates() and adjust_point() from infused-kim's guide at https://nilnil.notion.site/Convert-Kicad-Footprints-to-Ergogen-8340ce87ad554c69af4e3f92bc9a0898
     I have no idea how it works. I am pretty sure that it interfaces with the other ergogen code in fancy ways.
-    I do know that get_at_coordinates() is a helper funciton for adjust_point*/
+    I do know that get_at_coordinates() is a helper funciton for adjust_point
+    */
     const get_at_coordinates = () => {
       const pattern = /\(at (-?[\d\.]*) (-?[\d\.]*) (-?[\d\.]*)\)/;
       const matches = p.at.match(pattern);
@@ -198,7 +201,9 @@ module.exports = {
       }
     }
 
-    /*Call adjust_point if you want to make something move that is outisde of the main body of the footprint. Aka after the ')' in the return statement*/
+    /*
+    Call adjust_point if you want to make something move that is outisde of the main body of the footprint. Aka after the ')' in the return statement
+    */
     const adjust_point = (x, y) => {
       const at_l = get_at_coordinates();
       if(at_l == null) {
