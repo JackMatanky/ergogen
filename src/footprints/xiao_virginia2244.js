@@ -3,31 +3,36 @@
 
 module.exports = {
   params: {
+    // designator: 'MCU',
     reversable: { type: "boolean", value: true },
     label: { type: "boolean", value: true },
     instructions: { type: "boolean", value: true },
     traces: { type: "boolean", value: true },
-    P0: { type: "net", value: "P0" },
-    P1: { type: "net", value: "P1" },
-    P2: { type: "net", value: "P2" },
-    P3: { type: "net", value: "P3" },
-    P4: { type: "net", value: "P4" },
-    P5: { type: "net", value: "P5" },
-    P6: { type: "net", value: "P6" },
-    P7: { type: "net", value: "P7" },
-    P8: { type: "net", value: "P8" },
-    P9: { type: "net", value: "P9" },
-    P10: { type: "net", value: "P10" },
-    VCC: { type: "net", value: "VCC" },
-    GND: { type: "net", value: "GND" },
-    V3: { type: "net", value: "V3" },
+
+    // Left Row
+    P0: {type: 'net', value: 'P0'},
+    P1: {type: 'net', value: 'P1'},
+    P2: {type: 'net', value: 'P2'},
+    P3: {type: 'net', value: 'P3'},
+    P4: {type: 'net', value: 'P4'},
+    P5: {type: 'net', value: 'P5'},
+    P6: {type: 'net', value: 'P6'},
+
+    // Right Row
+    RAW5V: {type: 'net', value: 'RAW5V'},
+    GND: {type: 'net', value: 'GND'},
+    RAW3V3: {type: 'net', value: 'RAW3V3'},
+    P10: {type: 'net', value: 'P10'},
+    P9: {type: 'net', value: 'P9'},
+    P8: {type: 'net', value: 'P8'},
+    P7: {type: 'net', value: 'P7'},
   },
   body: (p) => {
     /* Putting the nets into an array so that it can be itterated through */
     const pin_nets = [
-      [`${p.P0.str}`, `${p.VCC.str}`],
+      [`${p.P0.str}`, `${p.RAW5V.str}`],
       [`${p.P1.str}`, `${p.GND.str}`],
-      [`${p.P2.str}`, `${p.V3.str}`],
+      [`${p.P2.str}`, `${p.RAW3V3.str}`],
       [`${p.P3.str}`, `${p.P10.str}`],
       [`${p.P4.str}`, `${p.P9.str}`],
       [`${p.P5.str}`, `${p.P8.str}`],
@@ -150,7 +155,7 @@ module.exports = {
     Front means the front layer of the pcb while back means the back layer of the pcb.
     left and right mean the left and right side of the microcontroller*/
       for (let i = 0; i < spacing.total_pin_num / 2; i++) {
-        if (i < 3) {
+        // if (i < 3) {
           //Through holes
           solder_pads += `(pad ${i}                             thru_hole oval (at ${
             spacing.top_left_pin.x
@@ -264,25 +269,25 @@ module.exports = {
             p.local_net(spacing.total_pin_num - 1 - i).str
           }`;
           solder_pads += male_pad;
-        } else {
-          //Through holes
-          solder_pads += `(pad ${i}                             thru_hole oval (at ${
-            spacing.top_left_pin.x
-          }  ${spacing.top_left_pin.y + i * spacing.pin_dist}  ${
-            p.rot
-          })       (size 2.75 1.8) (drill 1 (offset -0.475 0)) (layers *.Cu *.Mask) ${
-            pin_nets[i][0]
-          })\n`;
-          solder_pads += `(pad ${
-            spacing.total_pin_num - 1 - i
-          } thru_hole oval (at ${spacing.top_right_pin.x} ${
-            spacing.top_right_pin.y + i * spacing.pin_dist
-          } ${
-            180 + p.rot
-          }) (size 2.75 1.8) (drill 1 (offset -0.475 0)) (layers *.Cu *.Mask) ${
-            pin_nets[i][1]
-          })\n`;
-        }
+        // } else {
+        //   //Through holes
+        //   solder_pads += `(pad ${i}                             thru_hole oval (at ${
+        //     spacing.top_left_pin.x
+        //   }  ${spacing.top_left_pin.y + i * spacing.pin_dist}  ${
+        //     p.rot
+        //   })       (size 2.75 1.8) (drill 1 (offset -0.475 0)) (layers *.Cu *.Mask) ${
+        //     pin_nets[i][0]
+        //   })\n`;
+        //   solder_pads += `(pad ${
+        //     spacing.total_pin_num - 1 - i
+        //   } thru_hole oval (at ${spacing.top_right_pin.x} ${
+        //     spacing.top_right_pin.y + i * spacing.pin_dist
+        //   } ${
+        //     180 + p.rot
+        //   }) (size 2.75 1.8) (drill 1 (offset -0.475 0)) (layers *.Cu *.Mask) ${
+        //     pin_nets[i][1]
+        //   })\n`;
+        // }
       }
       return solder_pads;
     };
@@ -334,7 +339,8 @@ module.exports = {
     const get_traces = () => {
       let traces = ``;
       /*Starts by generating all of the traces for one row, then itterates down all of the pins.*/
-      for (let i = 0; i < spacing.total_pin_num / 2 && i < 3; i++) {
+      // for (let i = 0; i < spacing.total_pin_num / 2 && i < 3; i++)
+      for (let i = 0; i < spacing.total_pin_num / 2; i++) {
         /* Left pin to Right male pad F and B*/
         traces += `\t(segment (start ${adjust_point(
           spacing.top_left_pin.x + spacing.pin_to_male_pad,
@@ -449,8 +455,8 @@ module.exports = {
       return traces;
     };
 
-    /* Adding lables on the front side of the pcb */
-    const lable_txt = `
+    /* Adding labels on the front side of the pcb */
+    const label_txt = `
     ${"" /*Lettering on the silkscreen*/}
     (fp_text user "XIAO" (at 0 0.5 ${p.rot}) (layer "F.SilkS")
     (effects (font (size 1 1) (thickness 0.15)))
@@ -462,7 +468,7 @@ module.exports = {
     `;
 
     /* Adds lables on the back side of the pcb */
-    const reversable_lable_txt = `
+    const reversable_label_txt = `
     ${"" /*Lettering on the silkscreen*/}
     (fp_text user "XIAO" (at 0 0.5 ${p.rot}) (layer "B.SilkS")
     (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
@@ -549,12 +555,12 @@ footprint "xiao-ble-tht" (generator pcbnew)
   ${get_solder_pads()}      
 
   ${"" /* Getting the lables */}
-  ${p.label ? reversable_lable_txt : ""}
+  ${p.label ? reversable_label_txt : ""}
     `;
 
     return `
       ${p.reversable ? reversable_txt : standard}
-      ${p.label ? lable_txt : ""}
+      ${p.label ? label_txt : ""}
       ${p.instructions ? instructions : ""}
       )
       ${p.traces ? (p.reversable ? get_traces() : "") : ""}
