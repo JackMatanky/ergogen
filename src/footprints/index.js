@@ -18,7 +18,6 @@ module.exports = {
     nice_nano_kim: require('./nice_nano_kim'),
     nice_view_ceoloide: require('./nice_view_ceoloide'),
     nice_view_kim: require('./nice_view_kim'),
-    nice_view: require('./nice_view'),
     oled: require('./oled'),
     omron: require('./omron'),
     pad: require('./pad'),
