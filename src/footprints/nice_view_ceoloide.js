@@ -7,8 +7,8 @@
 // Author: @infused-kim + @ceoloide improvements
 //
 // Description:
-//  Reversible footprint for nice!view display. Includes an outline of the
-//  display to make positioning easier.
+//  Reversible footprint for nice!view display.
+//  Includes an outline of the display to make positioning easier.
 //
 //  Note that because the center pin is VCC on both sides, there is no associated jumper pad
 //  in the reversible footprint.

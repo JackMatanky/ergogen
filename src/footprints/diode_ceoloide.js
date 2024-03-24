@@ -8,18 +8,19 @@
 // Authors: @ergogen + @infused-kim improvements + @ceoloide improvements
 //
 // Description:
-//  Combined Thru-Hole and SMD diode footprint for SOD-123 package, like the Semtech 1N4148W
-//  component sold by Typeractive.xyz or LCSC.
+//  Combined Thru-Hole and SMD diode footprint for SOD-123 package,
+// like the Semtech 1N4148W component sold by Typeractive.xyz or LCSC.
 //
 // Datasheet:
 //  https://cdn.shopify.com/s/files/1/0618/5674/3655/files/Semtech-1N4148W.pdf?v=1670451309
 //
 // Params:
-//    side: default is B for Back
-//      the side on which to place the single-side footprint and designator, either F or B
+//   side: default is B for Back
+//     the side on which to place the single-side
+//     footprint and designator, either F or B
 //    reversible: default is false
-//      if true, the footprint will be placed on both sides so that the PCB can be
-//      reversible
+//      if true, the footprint will be placed on both sides
+//      so that the PCB can be reversible
 //    include_tht: default is false
 //      if true it includes through-hole pads alongside SMD ones
 //
