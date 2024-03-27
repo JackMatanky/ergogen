@@ -1,5 +1,6 @@
 // Author: LowellCamp from discord
 // Source: https://discord.com/channels/714176584269168732/847753414229491733/1112247155818774668
+// https://github.com/camplowell/KicadFootprints/tree/main
 
 module.exports = {
   nets: {
