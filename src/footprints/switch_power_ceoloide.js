@@ -25,16 +25,18 @@
 //
 // Params:
 //    side: default is F for Front
-//      the side on which to place the single-side footprint and designator, either F (Front)
-//      or B (Back)
+//      the side on which to place the single-side footprint and designator,
+//      either F (Front) or B (Back)
 //    reversible: default is false
-//      if true, it will include pads on both Front and Back to make the footprint reversible
+//      if true, it will include pads on both Front and Back
+//      to make the footprint reversible
 //    invert_behavior: default is false
-//      if true, pin 3 will connect to the "from" net, and if false it will connect to pin 1,
+//      if true, pin 3 will connect to the "from" net,
+//      and if false it will connect to pin 1,
 //      effectively inverting the behavior of the switch.
 //    include_silkscreen: default is true
-//      if true it will include silkscreen markings, which is recommended to know which side
-//      connects Bat+ to RAW.
+//      if true it will include silkscreen markings,
+//      which is recommended to know which side connects Bat+ to RAW.
 //    include_courtyard: default is false
 //      if true it will include the courtyard around the component
 //
@@ -50,7 +52,7 @@ module.exports = {
     designator: "PWR",
     side: "F",
     reversible: false,
-    invert_behavior: true,
+    invert_behavior: false,
     include_silkscreen: true,
     include_courtyard: false,
     from: { type: "net", value: "BAT_P" },
