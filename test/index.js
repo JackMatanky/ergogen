@@ -5,7 +5,7 @@ const glob = require('glob')
 const u = require('../src/utils')
 const a = require('../src/assert')
 const ergogen = require('../src/ergogen')
-require('./helpers/mock_footprints').inject(ergogen)
+require('./helpers/mock').inject(ergogen)
 
 let what = process.env.npm_config_what
 const dump = process.env.npm_config_dump
@@ -203,7 +203,7 @@ for (let w of cli_what) {
                         if (ex === 'should_have_thrown') {
                             throw new Error('This command should have thrown!')
                         }
-                        const actual_error = ex.stderr.toString().split('\n')[0]
+                        const actual_error = ex.stderr.toString()
                         if (dump) {
                             fs.writeFileSync(path.join(t, 'error'), actual_error)
                         }

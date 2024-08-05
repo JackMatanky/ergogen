@@ -1,6 +1,6 @@
 {
     "name": "ergogen",
-    "version": "4.0.4",
+    "version": "4.1.0",
     "description": "Ergonomic keyboard layout generator",
     "author": "Bán Dénes <mr@zealot.hu>",
     "license": "MIT",
@@ -39,6 +39,9 @@
         "all": true,
         "include": [
             "src/**/*.js"
+        ],
+        "exclude": [
+            "src/templates/kicad8.js"
         ]
     }
 }
